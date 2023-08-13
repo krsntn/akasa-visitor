@@ -122,7 +122,11 @@ const Home = ({ supabase }) => {
                   <FormItem className="my-2">
                     <FormLabel className={labelClasses}>Phone Number</FormLabel>
                     <FormControl>
-                      <Input {...field} className={inputClasses} />
+                      <Input
+                        {...field}
+                        className={inputClasses}
+                        inputMode="tel"
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
