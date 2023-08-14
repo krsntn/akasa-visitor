@@ -4,6 +4,7 @@ import { createClient } from "@supabase/supabase-js";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/Home";
 import LogPage from "./pages/Log";
+import QrPage from "./pages/Qr";
 
 // Create a single supabase client for interacting with your database
 const supabase = createClient(
@@ -24,6 +25,11 @@ const App = () => {
           exact
           path="/log"
           Component={() => <LogPage supabase={supabase} />}
+        />
+        <Route
+          exact
+          path="/qr/:code"
+          Component={() => <QrPage supabase={supabase} />}
         />
       </Routes>
     </BrowserRouter>

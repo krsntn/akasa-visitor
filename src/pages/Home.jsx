@@ -78,69 +78,67 @@ const Home = ({ supabase }) => {
   return (
     <>
       <div className="bg-image"></div>
-      <div className="p-6 m-auto min-h-[100dvh] sm:min-h-0 w-full max-w-lg flex flex-col justify-between gap-8">
-        <img src={akasaImg} className="w-1/2 m-auto my-12" />
+      <div className="p-6 sm:py-12 m-auto min-h-[100dvh] sm:min-h-0 sm:gap-12 w-full max-w-sm flex flex-col justify-between">
+        <img src={akasaImg} className="w-[70%] m-auto" />
 
-        <div>
-          <Form {...form}>
-            <form
-              onSubmit={form.handleSubmit(onSubmit)}
-              className="m-auto w-full flex flex-col justify-around text-center"
+        <Form {...form}>
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="m-auto w-full flex flex-col justify-around text-center"
+          >
+            <FormField
+              control={form.control}
+              name="name"
+              render={({ field }) => (
+                <FormItem className="my-2">
+                  <FormLabel className={labelClasses}>Guest Name</FormLabel>
+                  <FormControl>
+                    <Input {...field} className={inputClasses} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="carPlate"
+              render={({ field }) => (
+                <FormItem className="my-2">
+                  <FormLabel className={labelClasses}>
+                    Car Plate Number
+                  </FormLabel>
+                  <FormControl>
+                    <Input {...field} className={inputClasses} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="phone"
+              render={({ field }) => (
+                <FormItem className="my-2">
+                  <FormLabel className={labelClasses}>Phone Number</FormLabel>
+                  <FormControl>
+                    <Input
+                      {...field}
+                      className={inputClasses}
+                      inputMode="tel"
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <Button
+              type="submit"
+              className="mt-8 py-8 focus-visible:ring-primary bg-primary text-secondary hover:bg-primary"
             >
-              <FormField
-                control={form.control}
-                name="name"
-                render={({ field }) => (
-                  <FormItem className="my-2">
-                    <FormLabel className={labelClasses}>Guest Name</FormLabel>
-                    <FormControl>
-                      <Input {...field} className={inputClasses} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="carPlate"
-                render={({ field }) => (
-                  <FormItem className="my-2">
-                    <FormLabel className={labelClasses}>
-                      Car Plate Number
-                    </FormLabel>
-                    <FormControl>
-                      <Input {...field} className={inputClasses} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="phone"
-                render={({ field }) => (
-                  <FormItem className="my-2">
-                    <FormLabel className={labelClasses}>Phone Number</FormLabel>
-                    <FormControl>
-                      <Input
-                        {...field}
-                        className={inputClasses}
-                        inputMode="tel"
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <Button
-                type="submit"
-                className="mt-8 py-8 focus-visible:ring-primary bg-primary text-secondary hover:bg-primary"
-              >
-                Register
-              </Button>
-            </form>
-          </Form>
-        </div>
+              Register
+            </Button>
+          </form>
+        </Form>
       </div>
       <Toaster />
     </>
