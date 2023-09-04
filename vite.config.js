@@ -11,9 +11,9 @@ export default defineConfig({
     VitePWA({
       registerType: "autoUpdate",
       manifest: {
-        name: "Akasa Guest",
-        short_name: "Akasa Guest",
-        description: "Akasa Guest App",
+        name: "Akasa Visitor",
+        short_name: "Akasa Visitor",
+        description: "Akasa Visitor App",
         theme_color: "#000000",
         icons: [
           {

@@ -91,7 +91,7 @@ const Home = ({ supabase }) => {
               name="name"
               render={({ field }) => (
                 <FormItem className="my-2">
-                  <FormLabel className={labelClasses}>Guest Name</FormLabel>
+                  <FormLabel className={labelClasses}>Visitor Name</FormLabel>
                   <FormControl>
                     <Input {...field} className={inputClasses} />
                   </FormControl>

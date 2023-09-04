@@ -20,7 +20,7 @@ const Qr = () => {
         </div>
 
         <div className="text-sm py-2 px-6">
-          This QR code provides guest access. Please present it to the guard
+          This QR code provides visitor access. Please present it to the guard
           upon your arrival at the guardhouse.
         </div>
       </div>
